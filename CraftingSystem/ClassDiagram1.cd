@@ -10,15 +10,8 @@
   <Class Name="CraftingSystem.Recipe">
     <Position X="4.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAiAA=</HashCode>
       <FileName>Recipe.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CraftingSystem.CraftingEngine">
-    <Position X="4.75" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAA=</HashCode>
-      <FileName>CraftingEngine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Person">
@@ -31,15 +24,22 @@
   <Class Name="CraftingSystem.Item">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAFAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAJAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Display">
     <Position X="6.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Display.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CraftingSystem.CraftingEngine">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIABAAAAAAABAAAAAQUAAAAI=</HashCode>
+      <FileName>CraftingEngine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -7,6 +7,15 @@ namespace CraftingSystem
 {
     public class Display
     {
-        //custom print method
+        public static void Print (string text)
+        {
+            Console.WriteLine(text);
+        }
+        public static void Render()
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+        }
     }
 }

@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static CraftingSystem.Display;
 
 namespace CraftingSystem
 {
     public class Person
     {
-        private string PersonName;
-        private int Money;
-        private List<Item> Inventory = new List<Item>();
-        private List<Recipe> KnownRecipes = new List<Recipe>();
+        public string Name;
+        public int Money;
+        public List<Item> Inventory = new List<Item>();
+        public List<Recipe> KnownRecipes = new List<Recipe>();
 
         public Person(string name, int money, List<Item> inventory, List<Recipe> recipes)
         {
-            PersonName = name;
+            Name = name;
             Money = money;
             Inventory = inventory;
             KnownRecipes = recipes;
@@ -39,6 +40,20 @@ namespace CraftingSystem
         public string GetMoney()
         {
             return Money.ToString();
+        }
+        
+        public void ShowKnownRecipes()
+        {
+            Render();
+            foreach (Recipe recipe in KnownRecipes)
+            {
+                for (int n=0; n < KnownRecipes.Count; n++)
+                {
+                    Print($"{n + 1}) {recipe.Name}");
+                }
+            }
+            Print("Press any key to return to menu");
+            Console.ReadKey();
         }
     }
 }

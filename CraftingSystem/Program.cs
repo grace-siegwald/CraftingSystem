@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            CraftingEngine engine = new CraftingEngine();
+            engine.Setup();
         }
     }
 }

@@ -7,13 +7,15 @@ namespace CraftingSystem
 {
     public class Recipe
     {
-        private string RecipeName;
-        private int ResultQuantity;
-        private List<Item> Ingredients = new List<Item>();
-
-        public Recipe(string name, int resultQuantity, List<Item> ingredients)
+        public string Name;
+        public string Description;
+        public List<Item> Ingredients = new List<Item>();
+        public int ResultQuantity;
+        
+        public Recipe(string name, string description, int resultQuantity, List<Item> ingredients)
         {
-            RecipeName = name;
+            Name = name;
+            Description = description;
             ResultQuantity = resultQuantity;
             Ingredients = ingredients;
         }

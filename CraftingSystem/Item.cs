@@ -7,14 +7,17 @@ namespace CraftingSystem
 {
     public class Item
     {
-        private string ItemName;
-        private int ItemQuantity;
-        private int price;
+        public string Name;
+        public string Description;
+        public int Quantity;
+        public int Price;
         public Item(string name, int quantity, int price)
         {
-            ItemName = name;
-            ItemQuantity = quantity;
-            this.price = price;
+            Name = name;
+            Description = "temp description";
+            Quantity = quantity;
+            Price = price;
         }
+        public Item() { }
     }
 }
