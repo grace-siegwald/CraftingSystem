@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -75,7 +76,10 @@ namespace CraftingSystem
 
         public void SetName()
         {
-            Render();
+            //Render();
+
+            AnsiConsole.MarkupLine("[bold blue]Welcome[/] to [green]Crafting Crafting Crafting[/]!");
+
             Print("Hello beautiful player of this crafting game! " +
                 "\nPlease enter your name:");
             

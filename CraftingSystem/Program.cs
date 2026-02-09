@@ -1,4 +1,6 @@
-﻿namespace CraftingSystem
+﻿using Spectre.Console;
+
+namespace CraftingSystem
 {
     internal class Program
     {
