@@ -11,9 +11,11 @@ namespace CraftingSystem
         public string Name;
         public int Money;
         public List<Item> Inventory = new List<Item>();
-        public List<Recipe> KnownRecipes = new List<Recipe>();
+        //public List<Recipe> KnownRecipes = new List<Recipe>();
 
-        public Person(string name, int money, List<Item> inventory, List<Recipe> recipes)
+        public Dictionary<Recipe, List<Item>> KnownRecipes = new Dictionary<Recipe, List<Item>>();
+
+        public Person(string name, int money, List<Item> inventory, Dictionary<Recipe, List<Item>> recipes)
         {
             Name = name;
             Money = money;
@@ -26,20 +28,20 @@ namespace CraftingSystem
             Money = money;
         }
 
-        // overloaded constructor
         public Person() { }
 
         private void BuyItem(Item item)
         {
-
+            // Adds the specified item to the person's Inventory
         }
         private void SellItem(Item item)
         {
-
+            // Removes the specified item to the person's Inventory
         }
 
         private Item Craft(Recipe recipe)
         {
+            
             return null;
         }
 
@@ -48,10 +50,19 @@ namespace CraftingSystem
             return Money.ToString();
         }
         
+        public void Search(Item name)
+        {
+            // Searches through a collection of a person's current ITEMS
+        }
+        public void Search(Recipe name)
+        {
+            // Searches through a collection of a person's current RECIPES
+        }
+
         public void ShowKnownRecipes()
         {
             Render();
-            foreach (Recipe recipe in KnownRecipes)
+            foreach (var recipe in KnownRecipes.Keys)
             {
                 for (int n=0; n < KnownRecipes.Count; n++)
                 {

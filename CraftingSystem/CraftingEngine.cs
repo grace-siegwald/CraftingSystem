@@ -11,48 +11,23 @@ namespace CraftingSystem
     {
         public string CraftingEngineName = "Craft Craft Craft!";
         public Person Player = new Person(100);
-
         public Person Vendor = new Person();
 
-        public List<Recipe> Recipes = new List<Recipe>();
-         
+        public Dictionary<Recipe, List<Item>> Recipes = new Dictionary<Recipe, List<Item>>();
+
         public void Setup()
         {
             // Setting Console Title!
             Console.Title = CraftingEngineName;
-            
-            // Adding a couple recipes to the game!
-            Recipes.Add(
-            new Recipe(
-                "Recipe 1",
-                "description",
-                1,
-                new List<Item>()
-                    {
-                        new Item("item name", 1, 1),
-                        new Item("item name 2", 2, 2),
-                        new Item("item name 3", 3, 3)
-                    }
-                )
-            );
-            Recipes.Add(
-            new Recipe(
-                "Recipe 2",
-                "description",
-                2,
-                new List<Item>()
-                    {
-                        new Item("item name 4", 4, 4)
-                    }
-                )
-            );
 
-            foreach (Recipe recipe in Recipes)
+            // Adding a couple recipes to the game!
+            AddAllRecipesToGame();
+
+            foreach (var recipe in Recipes)
             {
-                Player.KnownRecipes.Add(recipe);
+                Player.KnownRecipes.Add(recipe.Key, recipe.Value);
             }
 
-            // The player chooses their name
             SetName();
         }
         
@@ -126,6 +101,32 @@ namespace CraftingSystem
 
             Console.ReadKey();
             MainMenu();
+        }
+
+        public void AddAllRecipesToGame()
+        {
+            Recipes.Add(
+            new Recipe(
+                "Recipe 1",
+                "description",
+                1),
+            new List<Item>()
+                    {
+                        new Item("item name", 1, 1),
+                        new Item("item name 2", 2, 2),
+                        new Item("item name 3", 3, 3)
+                    }
+            );
+            Recipes.Add(
+            new Recipe(
+                "Recipe 2",
+                "description",
+                2),
+            new List<Item>()
+                    {
+                        new Item("item name 4", 4, 4)
+                    }
+            );
         }
     }
 }

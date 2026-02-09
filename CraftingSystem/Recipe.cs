@@ -11,13 +11,14 @@ namespace CraftingSystem
         public string Description;
         public List<Item> Ingredients = new List<Item>();
         public int ResultQuantity;
-        
-        public Recipe(string name, string description, int resultQuantity, List<Item> ingredients)
+
+
+        public Recipe(string name, string description, int resultQuantity)
         {
             Name = name;
             Description = description;
             ResultQuantity = resultQuantity;
-            Ingredients = ingredients;
         }
+
     }
 }
