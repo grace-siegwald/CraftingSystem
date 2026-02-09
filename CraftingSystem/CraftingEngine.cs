@@ -76,13 +76,10 @@ namespace CraftingSystem
 
         public void SetName()
         {
-            //Render();
-
-            AnsiConsole.MarkupLine("[bold blue]Welcome[/] to [green]Crafting Crafting Crafting[/]!");
-
+            Render();
             Print("Hello beautiful player of this crafting game! " +
                 "\nPlease enter your name:");
-            
+
             // Player inputs their name
             Player.Name = Console.ReadLine();
 

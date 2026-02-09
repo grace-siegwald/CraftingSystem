@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,9 @@ namespace CraftingSystem
 
                 int leadingSpaces = Console.WindowWidth / 3;
                 string padding = new string(' ', leadingSpaces);
+                
+                //string  padding = AnsiConsole.MarkupLine("[rgb(255,87,51)]Orange-red text[/]");;
+                //AnsiConsole.MarkupLine($"[on red]{padding}[/]" + line);
 
                 Console.WriteLine(padding + line);
             }
@@ -64,6 +68,8 @@ namespace CraftingSystem
             Console.Clear();
         }
 
+        
+        //not implemented yet, idk how im going to do this? this is just a concept loll
         public static void Border()
         {
             string[,] border = { {"I"}, {""}, {"I"} };
