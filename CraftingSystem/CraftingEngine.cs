@@ -9,14 +9,18 @@ namespace CraftingSystem
 {
     public class CraftingEngine
     {
-        public string CraftingEngineName { get; set; }
-        public Person Player = new Person();
+        public string CraftingEngineName = "Craft Craft Craft!";
+        public Person Player = new Person(100);
+
         public Person Vendor = new Person();
 
         public List<Recipe> Recipes = new List<Recipe>();
          
         public void Setup()
         {
+            // Setting Console Title!
+            Console.Title = CraftingEngineName;
+            
             // Adding a couple recipes to the game!
             Recipes.Add(
             new Recipe(
@@ -56,12 +60,20 @@ namespace CraftingSystem
         public void MainMenu()
         {
             Render();
-            Print("The Menu of Wonder!" +
-                "\n1) View your Recipes" +
-                "\n2) blah" +
-                "\n3) blah" +
-                "\n4) blah" +
-                "\n5) Change your name");
+
+            PrintCenter(Player.Info());
+
+            string[] menuText = {
+                "1) View your Recipes",
+                "2) blah",
+                "3) blah",
+                "4) blah",
+                "4) Change your Name",
+                "",
+                "",
+                "6) Credits!"
+            };
+            PrintCenterLeft(menuText);
 
             string input = Console.ReadLine();
             int choice = Convert.ToInt32(input);
@@ -80,6 +92,9 @@ namespace CraftingSystem
                 case 5:
                     SetName();
                     break;
+                case 6:
+                    Credits();
+                    break;
             }
         }
 
@@ -93,6 +108,22 @@ namespace CraftingSystem
             Player.Name = Console.ReadLine();
 
             Print($"Wow {Player.Name}, a beautiful name for a beautiful person! Now press any key to enter the game!");
+            Console.ReadKey();
+            MainMenu();
+        }
+        public void Credits()
+        {
+            Render();
+            string[] text = {
+                $"Wow thanks for looking at the credits {Player.Name}, you beautiful human!",
+                $"── ⋅⋅ ──── ⋅⋅ ──── ⋅⋅ ──",
+                $"Created By: Grace Siegwald",
+                $"https://github.com/grace-siegwald",
+                $"Press any Key to return to the Main Menu! :D",
+            };
+
+            PrintCenter(text);
+
             Console.ReadKey();
             MainMenu();
         }

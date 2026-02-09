@@ -10,35 +10,35 @@
   <Class Name="CraftingSystem.Recipe">
     <Position X="4.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAiAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Recipe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Person">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAiAAgAAAAAAAAIAAAAAAAAgAAAAAEAAgAAAAA=</HashCode>
+      <HashCode>AAAQAAAiAAgAAAAAAAAAAAQAAAAAgAAAAAEAAkAAAAA=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Item">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAJAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Display">
     <Position X="6.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAEAAA=</HashCode>
       <FileName>Display.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.CraftingEngine">
     <Position X="4.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAIABAAAAAAABAAAAAQUAAAAI=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIAAQAAAAAABAAAAAQUAAAAA=</HashCode>
       <FileName>CraftingEngine.cs</FileName>
     </TypeIdentifier>
   </Class>

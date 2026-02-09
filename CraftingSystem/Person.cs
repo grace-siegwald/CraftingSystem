@@ -20,6 +20,12 @@ namespace CraftingSystem
             Inventory = inventory;
             KnownRecipes = recipes;
         }
+
+        public Person(int money)
+        {
+            Money = money;
+        }
+
         // overloaded constructor
         public Person() { }
 
@@ -54,6 +60,19 @@ namespace CraftingSystem
             }
             Print("Press any key to return to menu");
             Console.ReadKey();
+        }
+
+        public string[] Info()
+        {
+            //var content = $"Hiiiiii {Name}!!" +
+            //    $" You have {Money}$"; 
+
+            string[] content = { 
+                $"Hiiiiii {Name}!!", 
+                $"You have {Money}$"
+            };
+
+            return content;
         }
     }
 }
