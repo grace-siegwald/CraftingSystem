@@ -10,15 +10,16 @@ namespace CraftingSystem
         public string Name;
         public string Description;
         public List<Item> Ingredients = new List<Item>();
-        public int ResultQuantity;
+        public int YieldAmount;
 
 
-        public Recipe(string name, string description, int resultQuantity)
+        public Recipe(string name, string description, int yieldAmount)
         {
             Name = name;
             Description = description;
-            ResultQuantity = resultQuantity;
+            YieldAmount = yieldAmount;
         }
+        public Recipe() { }
 
     }
 }

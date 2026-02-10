@@ -10,13 +10,13 @@ namespace CraftingSystem
         public string Name;
         public string Description;
         public int Quantity;
-        public int Price;
-        public Item(string name, int quantity, int price)
+        public int Value;
+        public Item(string name, int quantity, int value)
         {
             Name = name;
-            Description = "temp description";
+            //Description = Description;
             Quantity = quantity;
-            Price = price;
+            Value = value;
         }
         public Item() { }
     }
