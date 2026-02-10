@@ -44,46 +44,66 @@ namespace CraftingSystem
                 "2) blah",
                 "3) blah",
                 "4) blah",
-                "4) Change your Name",
+                "5) Change your Name",
                 "",
                 "",
                 "6) Credits!"
             };
             PrintCenterLeft(menuText);
 
-            string input = Console.ReadLine();
-            int choice = Convert.ToInt32(input);
-            switch (choice)
+            string input = PlayerInput();
+            if (input is "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9")
             {
-                case 1:
-                    Player.ShowKnownRecipes();
+                int choice = Convert.ToInt32(input);
+                if (choice is 1 or 2 or 3 or 4 or 5 or 6)
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            Player.ShowKnownRecipes();
+                            MainMenu();
+                            break;
+                        case 2:
+                            MainMenu();
+                            break;
+                        case 3:
+                            MainMenu();
+                            break;
+                        case 4:
+                            MainMenu();
+                            break;
+                        case 5:
+                            SetName();
+                            break;
+                        case 6:
+                            Credits();
+                            break;
+                    }
+                }
+                else
+                {
+                    PrintCenter("that's not a number 1-6, silly!");
+                    Pause();
                     MainMenu();
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    SetName();
-                    break;
-                case 6:
-                    Credits();
-                    break;
+                }
+            }
+            else
+            {
+                PrintCenter("that's not a number 1-6, silly!");
+                Pause();
+                MainMenu();
             }
         }
 
         public void SetName()
         {
             Render();
-            Print("Hello beautiful player of this crafting game! " +
-                "\nPlease enter your name:");
+            PrintCenter("Hello beautiful player of this crafting game! Please enter your name:");
 
             // Player inputs their name
-            Player.Name = Console.ReadLine();
+            Player.Name = PlayerInput();
 
-            Print($"Wow {Player.Name}, a beautiful name for a beautiful person! Now press any key to enter the game!");
+            PrintCenter($"Wow {Player.Name}, a beautiful name for a beautiful person! Now press any key to enter the game!");
             Console.ReadKey();
             MainMenu();
         }

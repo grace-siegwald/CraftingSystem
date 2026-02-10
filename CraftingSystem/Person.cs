@@ -62,28 +62,29 @@ namespace CraftingSystem
         public void ShowKnownRecipes()
         {
             Render();
+            
+            PrintCenter($"Wowww {Name} look at all these recipes you've discovered");
+            
             foreach (var recipe in KnownRecipes.Keys)
             {
-                for (int n=0; n < KnownRecipes.Count; n++)
+                for (int n = 0; n < KnownRecipes.Count; n++)
                 {
-                    Print($"{n + 1}) {recipe.Name}");
+                    PrintCenterLeft($"{n + 1}) {recipe.Name}");
                 }
             }
-            Print("Press any key to return to menu");
+            AddSpace();
+            PrintCenter("Press any key to return to menu");
             Console.ReadKey();
         }
 
         public string[] Info()
         {
-            //var content = $"Hiiiiii {Name}!!" +
-            //    $" You have {Money}$"; 
-
-            string[] content = { 
+            string[] output = { 
                 $"Hiiiiii {Name}!!", 
                 $"You have {Money}$"
             };
 
-            return content;
+            return output;
         }
     }
 }

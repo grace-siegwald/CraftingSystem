@@ -14,6 +14,21 @@ namespace CraftingSystem
             Console.WriteLine(text);
         }
 
+        public static void Pause()
+        {
+            Console.ReadKey();
+        }
+        public static string PlayerInput()
+        {
+            return Console.ReadLine();
+        }
+        public static void AddSpace()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+
+
         public static void PrintCenter(string[] inputText)
         {
             foreach (string line in inputText)
@@ -29,19 +44,33 @@ namespace CraftingSystem
                 Console.WriteLine(padding + line);
             }
         }
-        public static void PrintCenter(string text)
+        public static void PrintCenter(string inputText)
         {
-            if (Console.WindowWidth < text.Length)
+            if (Console.WindowWidth < inputText.Length)
             {
-                Console.WriteLine(text);
+                Console.WriteLine(inputText);
             }
 
-            int leadingSpaces = (Console.WindowWidth - text.Length) / 2;
+            int leadingSpaces = (Console.WindowWidth - inputText.Length) / 2;
             string padding = new string(' ', leadingSpaces);
 
-            Console.WriteLine(padding + text);
+            Console.WriteLine(padding + inputText);
         }
-        
+        public static void PrintCenterLeft(string inputText)
+        {
+            if (Console.WindowWidth < inputText.Length)
+            {
+                Console.WriteLine(inputText);
+            }
+
+            int leadingSpaces = Console.WindowWidth / 3;
+            string padding = new string(' ', leadingSpaces);
+
+            //string  padding = AnsiConsole.MarkupLine("[rgb(255,87,51)]Orange-red text[/]");;
+            //AnsiConsole.MarkupLine($"[on red]{padding}[/]" + line);
+
+            Console.WriteLine(padding + inputText);
+        }
         public static void PrintCenterLeft(string[] inputText)
         {
             foreach (string line in inputText)
@@ -63,9 +92,11 @@ namespace CraftingSystem
 
         public static void Render()
         {
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
+            PrintCenter(".-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-.");
+            AddSpace();
         }
 
         
