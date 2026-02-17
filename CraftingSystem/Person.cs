@@ -53,13 +53,13 @@ namespace CraftingSystem
                 if (itemCheck == true)
                 {
                     output += $"You have |{item}| ";
-                    
+
                     // ...and the Quantity of said Item
                     bool quantityCheck = SearchQuantity(item.Quantity);
                     if (quantityCheck == true)
                     {
                         output += $"and its required quantity of |{item.Quantity}|";
-                        
+
                         // if both checks are passed, we break out of the loop...
                         break;
                     }
@@ -79,7 +79,7 @@ namespace CraftingSystem
             // ...create a new Item with the same name as the recipe, as well as it's specified amount and value, and return said Item!
             Item recipeProduct = new Item(recipe.Name, recipe.YieldAmount, recipe.YieldValue);
 
-            string[] successText = {output ,$"Beautiful! You have now crafted a {recipeProduct.Name}"};
+            string[] successText = { output, $"Beautiful! You have now crafted a {recipeProduct.Name}" };
             PrintCenter(successText);
 
             return recipeProduct;
@@ -126,35 +126,39 @@ namespace CraftingSystem
             Render();
 
             PrintCenter($"Wowww {Name} look at all these recipes you've discovered");
-
+            int n = 1;
             foreach (var recipe in KnownRecipes)
             {
                 List<Item> itemList = new List<Item>();
                 foreach (Item item in recipe.Ingredients) { itemList.Add(item); }
-
-                for (int n = 0; n < KnownRecipes.Count; n++)
-                {
-                    string[] text = {
-                        $"{n + 1}) {recipe.Name}",
+                string[] text = {
+                        $"{n}) {recipe.Name}",
                         $"      Description: {recipe.Description}",
                         $"      Requires:"
                     };
-                    PrintCenterLeft(text);
-                    foreach (Item item in itemList)
-                    {
-                        PrintCenterLeft($"          {item.Name} (x{item.Quantity})");
-                    }
+                PrintCenterLeft(text);
+                foreach (Item item in itemList)
+                {
+                    PrintCenterLeft($"          {item.Name} (x{item.Quantity})");
                 }
+                n++;
             }
             AddSpace();
-            PrintCenter("Press any key to return to menu");
-            Console.ReadKey();
+            PrintCenter("Enter a recipe's to try and craft it!");
+            string input = PlayerInput();
+            if (int.TryParse(input, out int num))
+            { 
+                if (num == n)
+                {
+
+                }
+            }
         }
 
         public void InventoryMenu()
         {
             Render();
-            
+
             PrintCenter($"Wowww {Name} look at all these items you have");
 
             foreach (var item in Inventory)
@@ -167,7 +171,6 @@ namespace CraftingSystem
             }
             AddSpace();
             PrintCenter("Press any key to return to menu");
-            Console.ReadKey();
         }
 
         public string[] Info()

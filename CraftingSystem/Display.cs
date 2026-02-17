@@ -98,13 +98,5 @@ namespace CraftingSystem
             PrintCenter(".-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-.");
             AddSpace();
         }
-
-        
-        //not implemented yet, idk how im going to do this? this is just a concept loll
-        public static void Border()
-        {
-            string[,] border = { {"I"}, {""}, {"I"} };
-
-        }
     }
 }
