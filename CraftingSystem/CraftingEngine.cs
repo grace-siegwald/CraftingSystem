@@ -64,11 +64,11 @@ namespace CraftingSystem
                     switch (choice)
                     {
                         case 1:
-                            Player.ShowInventory();
+                            Player.InventoryMenu();
                             MainMenu();
                             break;
                         case 2:
-                            Player.ShowKnownRecipes();
+                            Player.RecipesMenu();
                             MainMenu();
                             break;
                         case 3:
@@ -81,7 +81,7 @@ namespace CraftingSystem
                             SetName();
                             break;
                         case 6:
-                            Credits();
+                            CreditsMenu();
                             break;
                     }
                 }
@@ -141,7 +141,7 @@ namespace CraftingSystem
             Console.ReadKey();
             MainMenu();
         }
-        public void Credits()
+        public void CreditsMenu()
         {
             Render();
             string[] text = {

@@ -121,7 +121,7 @@ namespace CraftingSystem
         }
 
 
-        public void ShowKnownRecipes()
+        public void RecipesMenu()
         {
             Render();
 
@@ -129,14 +129,21 @@ namespace CraftingSystem
 
             foreach (var recipe in KnownRecipes)
             {
+                List<Item> itemList = new List<Item>();
+                foreach (Item item in recipe.Ingredients) { itemList.Add(item); }
+
                 for (int n = 0; n < KnownRecipes.Count; n++)
                 {
                     string[] text = {
                         $"{n + 1}) {recipe.Name}",
-                        $"   Description: {recipe.Description}",
-                        $"   Requires:"
+                        $"      Description: {recipe.Description}",
+                        $"      Requires:"
                     };
                     PrintCenterLeft(text);
+                    foreach (Item item in itemList)
+                    {
+                        PrintCenterLeft($"          {item.Name} (x{item.Quantity})");
+                    }
                 }
             }
             AddSpace();
@@ -144,20 +151,18 @@ namespace CraftingSystem
             Console.ReadKey();
         }
 
-        public void ShowInventory()
+        public void InventoryMenu()
         {
             Render();
-
+            
             PrintCenter($"Wowww {Name} look at all these items you have");
 
-            int n = 1;
             foreach (var item in Inventory)
             {
                 string[] text = {
-                        $"{n}) {item.Name}",
+                        $"* {item.Name} (x{item.Quantity})",
                         $"   Value: ${item.Value}"
                     };
-                n++;
                 PrintCenterLeft(text);
             }
             AddSpace();
