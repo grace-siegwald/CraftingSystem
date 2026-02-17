@@ -33,7 +33,7 @@ namespace CraftingSystem
                 Player.KnownRecipes.Add(recipe);
             }
 
-            SetName();
+            NameMenu();
         }
         
         
@@ -46,12 +46,12 @@ namespace CraftingSystem
             string[] menuText = {
                 "1) Inventory",
                 "2) Your Recipes",
-                "3) blah",
+                "3) Craft Craft Craft!",
                 "4) blah",
                 "5) Change your Name",
+                "6) Credits!",
                 "",
-                "",
-                "6) Credits!"
+                "7) Quit"
             };
             PrintCenterLeft(menuText);
 
@@ -59,7 +59,7 @@ namespace CraftingSystem
             if (input is "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9")
             {
                 int choice = Convert.ToInt32(input);
-                if (choice is 1 or 2 or 3 or 4 or 5 or 6)
+                if (choice is 1 or 2 or 3 or 4 or 5 or 6 or 7)
                 {
                     switch (choice)
                     {
@@ -72,16 +72,19 @@ namespace CraftingSystem
                             MainMenu();
                             break;
                         case 3:
-                            MainMenu();
+                            CraftingMenu();
                             break;
                         case 4:
                             MainMenu();
                             break;
                         case 5:
-                            SetName();
+                            NameMenu();
                             break;
                         case 6:
                             CreditsMenu();
+                            break;
+                        case 7:
+                            Environment.Exit(0);
                             break;
                     }
                 }
@@ -100,7 +103,21 @@ namespace CraftingSystem
             }
         }
 
-        public void SetName()
+        public void CraftingMenu()
+        {
+            Render();
+            AddSpace();
+            string[] text =
+            {
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "WHOAAA THIS MENU IS A WORK IN PROGRESS GET OUTA HERE!",
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            };
+            PrintCenter(text);
+            Pause();
+            MainMenu();
+        }
+        public void NameMenu()
         {
             Render();
 
