@@ -11,7 +11,7 @@ namespace CraftingSystem
         public string Description;
         public List<Item> Ingredients = new List<Item>();
         public int YieldAmount;
-
+        public int YieldValue;
 
         public Recipe(string name, string description, int yieldAmount)
         {

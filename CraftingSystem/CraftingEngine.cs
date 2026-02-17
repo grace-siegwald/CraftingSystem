@@ -175,27 +175,31 @@ namespace CraftingSystem
                 // find what is in the recipe class and match that to what's in the xml file...
                 recipeToAdd.Name = recipe.GetAttribute("name");
                 recipeToAdd.Description = recipe.GetAttribute("description");
-                string yieldAmount = recipe.GetAttribute("yieldAmount");
+                string yieldAmount = recipe.GetAttribute("amount");
                 if (int.TryParse(yieldAmount, out int amount))
                 { recipeToAdd.YieldAmount = amount; }
+                
+                string yieldValue = recipe.GetAttribute ("value");
+                if (int.TryParse(yieldValue, out int value)) 
+                {  recipeToAdd.YieldValue = value; }
 
                 ingredientsList = recipe.ChildNodes; //for ingredients
 
-                foreach (XmlElement i in ingredientsList)
+                foreach (XmlElement ingredient in ingredientsList)
                 {
                     //Item itemToAdd = new Item();
                     //itemToAdd.Name = i.GetAttribute("name");
 
-                    string ingredientName = i.GetAttribute("name");
-                    string ingredientAmountString = i.GetAttribute("amount");
+                    string ingredientName = ingredient.GetAttribute("name");
+                    string ingredientAmountString = ingredient.GetAttribute("amount");
                     int ingredientAmount = 0;
-                    if (int.TryParse(ingredientAmountString, out int e))
-                    { ingredientAmount = e; }
+                    if (int.TryParse(ingredientAmountString, out int intAmount))
+                    { ingredientAmount = intAmount; }
 
-                    string tempIngredientValue = i.GetAttribute("value");
+                    string tempIngredientValue = ingredient.GetAttribute("value");
                     int ingredientValue = 0;
-                    if (int.TryParse(tempIngredientValue, out int ingValue))
-                    { ingredientValue = ingValue; }
+                    if (int.TryParse(tempIngredientValue, out int intValue))
+                    { ingredientValue = intValue; }
 
                     recipeToAdd.Ingredients.Add(new Item(ingredientName, ingredientAmount, ingredientValue));
                 }

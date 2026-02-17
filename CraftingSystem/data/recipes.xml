@@ -1,6 +1,6 @@
 <recipes>
-	<recipe name="Chamomile Tea" description="calming tea...">
-		<ingredient name="Water" amount="1" amountType="cup"></ingredient>
-		<ingredient name="Chamomile" amount="1" amountType="tsp"></ingredient>
+	<recipe name="Chamomile Tea" description="calming tea..." amount="1" value="1">
+		<ingredient name="Water" amount="1" value="10"></ingredient>
+		<ingredient name="Chamomile" amount="1" value="10"></ingredient>
 	</recipe>
 </recipes>

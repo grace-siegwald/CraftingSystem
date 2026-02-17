@@ -27,9 +27,8 @@ namespace CraftingSystem
         public Person(int money)
         {
             Money = money;
-            Inventory.Add(new Item("Wood", 10, 1));
-            Inventory.Add(new Item("Stone", 10, 1));
-            Inventory.Add(new Item("Flint", 10, 1));
+            Inventory.Add(new Item("Water", 1, 10));
+            Inventory.Add(new Item("Chamomile", 1, 10));
         }
 
         public Person() { }
@@ -41,6 +40,49 @@ namespace CraftingSystem
         private void SellItem(Item item)
         {
             // Removes the specified item to the person's Inventory
+        }
+
+        public Item? Craft(Recipe recipe)
+        {
+            string output = "";
+            // This method needs to SEARCH the player's inventory for each of the items required in the recipe being passed in
+            foreach (Item item in recipe.Ingredients)
+            {
+                // Check player inventory for the Item...
+                bool itemCheck = Search(item);
+                if (itemCheck == true)
+                {
+                    output += $"You have |{item}| ";
+                    
+                    // ...and the Quantity of said Item
+                    bool quantityCheck = SearchQuantity(item.Quantity);
+                    if (quantityCheck == true)
+                    {
+                        output += $"and its required quantity of |{item.Quantity}|";
+                        
+                        // if both checks are passed, we break out of the loop...
+                        break;
+                    }
+                    else if (quantityCheck == false)
+                    {
+                        output += $"but not its required quantity of |{item.Quantity}|";
+                        PrintCenter(output);
+                        return null;
+                    }
+                }
+                else if (itemCheck == false)
+                {
+                    PrintCenter($"Sorryyyyy {Name}, you don't have the required ingredients to craft this recipe!");
+                    return null;
+                }
+            }
+            // ...create a new Item with the same name as the recipe, as well as it's specified amount and value, and return said Item!
+            Item recipeProduct = new Item(recipe.Name, recipe.YieldAmount, recipe.YieldValue);
+
+            string[] successText = {output ,$"Beautiful! You have now crafted a {recipeProduct.Name}"};
+            PrintCenter(successText);
+
+            return recipeProduct;
         }
 
         public bool Search(Item name)
@@ -55,6 +97,17 @@ namespace CraftingSystem
             }
             return false;
         }
+        public bool SearchQuantity(int recipeQuantity)
+        {
+            foreach (var item in Inventory)
+            {
+                if (item.Quantity == recipeQuantity)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public bool Search(Recipe name)
         {
             // Searches through a collection of a person's current RECIPES. If it finds it, return TRUE. If it doesn't, return FALSE
@@ -62,12 +115,6 @@ namespace CraftingSystem
 
             return output;
         }
-        private Item Craft(Recipe recipe)
-        {
-
-            return null;
-        }
-
         public string GetMoney()
         {
             return Money.ToString();
@@ -108,8 +155,7 @@ namespace CraftingSystem
             {
                 string[] text = {
                         $"{n}) {item.Name}",
-                        $"   Description: {item.Description}",
-                        $"   Value: {item.Value}$"
+                        $"   Value: ${item.Value}"
                     };
                 n++;
                 PrintCenterLeft(text);
