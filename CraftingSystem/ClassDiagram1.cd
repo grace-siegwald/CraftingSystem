@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="CraftingSystem.Program">
-    <Position X="0.5" Y="0.5" Width="2" />
+    <Position X="0.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Recipe">
-    <Position X="4.75" Y="0.5" Width="1.75" />
+    <Position X="6.25" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAACQAAAAAAAAAAEEAAAAAAAA=</HashCode>
       <FileName>Recipe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Person">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="2.25" Width="5.25" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAiAAgAAAAAAAAAAAQAAAAAgAAAAAEAAkAAAAA=</HashCode>
+      <HashCode>AAAQAAAiAAgAAEAAAAAAAAQAAAAAgCAAAAEAAkAgAAE=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Item">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Position X="10.25" Y="0.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAggAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.Display">
-    <Position X="6.75" Y="3" Width="1.5" />
+    <Position X="9" Y="3.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAEAAA=</HashCode>
+      <HashCode>AAAgQAAAAAAAAEAAAAAACAAAAAAAAAAAABAAAAAFAAA=</HashCode>
       <FileName>Display.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CraftingSystem.CraftingEngine">
-    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Position X="6.5" Y="3.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAIAAQAAAAAABAAAAAQUAAAAA=</HashCode>
+      <HashCode>AAAAAAAAGAAAAAAAAAAAIAAQACAAACBAAAAAAUgAAAA=</HashCode>
       <FileName>CraftingEngine.cs</FileName>
     </TypeIdentifier>
   </Class>
